@@ -1,0 +1,90 @@
+
+/*---------- Index.html ----------*/
+html {
+    font-family: sans-serif;
+    font-weight: 300px;
+}
+
+body {
+    background: white;
+}
+.row {
+    margin: 0;
+}
+
+.navMo {
+    background-color: white;
+    border-bottom: 2px solid black;
+   
+
+}
+
+.navMo img {
+   float: left; 
+   height: 80px;
+   width: 80px;
+}
+.navMo a {
+    float: right;
+    font-size: 22px;
+    font-weight: 700;
+    color: black;
+
+}
+ .foo  {
+   color: black;
+ }
+.navMo ul {
+    margin-top: 10px;
+}
+
+
+/*---------- productList.html ----------*/
+.theader {
+ margin-top: 5px;
+ font-size: 20px;
+ font-weight: 500px;
+}
+
+.box0 {
+    border: 1px solid black;
+    border-radius: 10px;
+    box-shadow: 5px;
+    background: white;
+}
+
+/*------ MainView-------- */
+.kp {
+    width: 85%;
+    height: 10%;
+    border: 5px solid darkgrey;
+    padding: 10px;
+    background: lightgray;
+}
+
+.info {
+    margin-top: 50px;
+    font-size: 18px;
+    font-weight: 500;
+}
+.info img {
+    margin-left: 75px;
+    height: 100px;
+    width: 110px;
+}
+.info p {
+   text-align: center;
+    margin-top: 5px;
+}
+
+/*------ productDetailsView-------- */
+
+.proDv {
+    width: 60%;
+    height: 40%;
+}
+
+.chart{
+    width: 100%;
+    height:300px;
+}

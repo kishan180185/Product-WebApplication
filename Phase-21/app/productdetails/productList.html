@@ -1,0 +1,59 @@
+<div class="container">    
+    <header>
+        <nav class="navbar navbar-inverse">
+            <div class="navbar-header">
+            <a class="navbar-brand" href="#">Product List</a>
+            </div>
+            <form class="navbar-form navbar-left">
+            <div class="input-group">
+                <input type="text" class="form-control" ng-model="proL" placeholder="Search">
+                <div class="input-group-btn">
+                <button class="btn btn-default" type="submit" style="padding:6.5px 12px">
+                    <i class="glyphicon glyphicon-search "></i>
+                </button>
+                </div>
+            </div>
+            
+            <div class="input-group form-control" style="margin-left:400px;">
+                
+                <select  class="order-by" ng-model="order" id="orderBy" >              
+                        <option value="Name">Name: A - Z</option>
+						<option value="-Name">Name: Z - A</option>
+						<option value="Price">Price: low - high</option>
+                        <option value="-Price">Price: high - low</option>
+                </select>
+            </div> 
+            </form>
+        </nav>
+    </header>
+    <div class="box0"> 
+    <div ng-controller="productCtrl as vm" class="table table-striped">
+        <div class="row theader">
+            <div class="col-sm-2">ProductCode</div>
+            <div class="col-sm-2">ProductName</div>
+            <div class="col-sm-2">ManufactureDate</div>
+            <div class="col-sm-2">Price</div>
+            <div class="col-sm-2">
+                <button type="button" ng-click="vm.toggleImage()">
+                    {{vm.showImage?"Hide":"Show"}} Image
+                </button>
+            </div>
+        </div>
+       
+        <div class="row" ng-repeat="prod in vm.product | filter:proL | orderBy: order">
+            <hr style="margin-bottom:10px ; width:100%; color:black;">
+            <div class="col-sm-2"><a ui-sref="prodDetail({proId: prod.proId})">{{prod.Pcode}}</a></div>
+            <div class="col-sm-2">{{prod.Name}}</div>
+            <div class="col-sm-2">{{prod.MfgDate}}</div>
+            <div class="col-sm-2">{{prod.Price | currency}}</div>
+            <div class="col-sm-2"><img ng-src="{{prod.Image}}" style="width: 70px;height:70px" ng-if="vm.showImage" title="{prod.ename}}">
+             </div>
+            <div class="col-sm-2"><a class="btn btn-primary"
+                       ui-sref="prodEdit({proId: prod.proId})"> Edit
+                    </a></div>
+           
+         </div>
+         <hr style="margin-bottom:10px ; width:100%; color:black;">
+        </div>
+    </div>
+</div>

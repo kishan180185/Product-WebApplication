@@ -1,0 +1,62 @@
+<div class="container proDv">
+<div class="panel panel-primary">
+    <div class="panel-heading" style="font-size: large; background: lightgray; color:black;">{{vm.title}}</div>
+
+<div class="panel-body">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="row">
+                <div class="col-md-3">Code:</div>
+                <div class="col-md-6">{{vm.product.Pcode}}</div>
+            </div>
+            <div class="row">
+                <div class="col-md-3">Name:</div>
+                <div class="col-md-6">{{vm.product.Name}}</div>
+            </div>
+            <div class="row">
+                <div class="col-md-3">Mfg Date:</div>
+                <div class="col-md-6">{{vm.product.MfgDate}}</div>
+            </div>
+            <div class="row">
+                <div class="col-md-3">Price:</div>
+                <div class="col-md-6">{{vm.product.Price | currency}}</div>
+            </div>
+            <div class="row">
+                <div class="col-md-3">Tax:</div>
+                <div class="col-md-6">{{vm.taxAmount | currency}} [@{{vm.product.tax}}%]</div>
+            </div>
+            <div class="row">
+                <div class="col-md-3">Shipping Charge:</div>
+                <div class="col-md-6">{{vm.product.ShippingCharge | currency}} </div>
+            </div>
+            <div class="row">
+                <div class="col-md-3">Total</div>
+                <div class="col-md-6">{{vm.totalAmount | currency}}</div>
+            </div>
+
+        </div>
+        <div class="col-md-6">
+            <img class="center-block img-responsive"
+                 style="width:300px; height:400px; margin: 2px;"
+                 ng-src="{{vm.product.Image}}"
+                 title="{{vm.product.Name}}">
+        </div>
+    </div>
+</div>
+
+    <div class="panel-footer">
+        <a class="btn btn-default"
+           ui-sref="prodList"
+           style="width:80px">
+        <i class="glyphicon glyphicon-chevron-left"></i>
+            Back
+        </a>
+        <a class="btn btn-primary"
+           ui-sref="prodEdit({proId:vm.product.proId})"
+           style="width: 80px;margin-left: 10px">
+            Edit
+        </a>
+    </div>
+
+</div>
+</div>
